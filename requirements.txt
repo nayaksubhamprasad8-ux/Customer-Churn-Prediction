@@ -1,0 +1,90 @@
+# =============================================================================
+# Customer Churn Prediction Project — Python Dependencies
+# =============================================================================
+#
+# Generated from: inspection of all notebooks in notebook/
+#   step_01_data_understanding.ipynb
+#   step_02_data_quality_audit.ipynb
+#   step_03_data_cleaning.ipynb
+#   step_04_eda.ipynb
+#   step_05_feature_engineering.ipynb
+#   step_06_model_training.ipynb
+#   step_07_model_evaluation.ipynb
+#   step_08_model_interpretation.ipynb
+#   step_09_final_prediction.ipynb
+#
+# Python version used during development: 3.12
+# Standard-library modules (os, copy, time, warnings, hashlib, json,
+# pathlib, ast, etc.) are NOT listed — they ship with Python.
+#
+# Install:
+#   pip install -r requirements.txt
+# =============================================================================
+
+# ── Data manipulation ─────────────────────────────────────────────────────────
+# Used in every notebook for reading CSVs, constructing DataFrames, and
+# performing all tabular data operations.
+pandas>=2.0.0,<3.0.0
+
+# ── Numerical computation ─────────────────────────────────────────────────────
+# Used in steps 02–09 for array operations, coefficient extraction, importance
+# arrays, probability score arithmetic, and np.arange / np.zeros helpers.
+numpy>=1.24.0,<2.0.0
+
+# ── Visualisation ─────────────────────────────────────────────────────────────
+# matplotlib: used in steps 04 and 06–09 for all plots (histograms, bar charts,
+# KDE overlays, ROC curves, heatmaps). matplotlib.ticker is used explicitly for
+# axis label formatting.
+matplotlib>=3.7.0,<4.0.0
+
+# seaborn: used in steps 04 and 06–09 for set_theme(), histplot(), kdeplot(),
+# violinplot(), boxplot(), heatmap(), despine(), and other high-level wrappers
+# around matplotlib.
+seaborn>=0.12.0,<1.0.0
+
+# ── Machine learning ─────────────────────────────────────────────────────────
+# scikit-learn: used in steps 05–09 for the full ML pipeline:
+#   sklearn.model_selection  — train_test_split
+#   sklearn.pipeline         — Pipeline
+#   sklearn.compose          — ColumnTransformer
+#   sklearn.preprocessing    — StandardScaler, OneHotEncoder
+#   sklearn.impute           — SimpleImputer
+#   sklearn.linear_model     — LogisticRegression
+#   sklearn.tree             — DecisionTreeClassifier
+#   sklearn.ensemble         — RandomForestClassifier, GradientBoostingClassifier
+#   sklearn.metrics          — accuracy_score, precision_score, recall_score,
+#                              f1_score, roc_auc_score, roc_curve,
+#                              confusion_matrix, classification_report,
+#                              ConfusionMatrixDisplay
+scikit-learn>=1.3.0,<1.5.0
+
+# scipy: not imported directly by any notebook, but it is a mandatory
+# runtime dependency of scikit-learn (used internally by solvers, sparse
+# matrices, and statistical tests). Listed here to ensure a compatible
+# version is resolved during installation.
+scipy>=1.9.0,<2.0.0
+
+# ── Model serialisation ───────────────────────────────────────────────────────
+# joblib: used in steps 05–09 to serialise and load the train/test splits
+# (preprocessed_splits.pkl), trained pipelines (trained_models.pkl), and the
+# final model (models/final_churn_model.joblib). Also used internally by
+# scikit-learn for parallel tree fitting (n_jobs=-1 in RandomForestClassifier).
+joblib>=1.3.0,<2.0.0
+
+# ── Jupyter notebook execution ────────────────────────────────────────────────
+# notebook: the classic Jupyter Notebook server. Required to open and run the
+# .ipynb files interactively. Version 7.x is the current stable generation
+# (built on JupyterLab components).
+notebook>=7.0.0,<8.0.0
+
+# ipykernel: the IPython-based Python kernel that Jupyter uses to execute code
+# inside .ipynb cells. Without it, the notebook server cannot run any Python
+# code.
+ipykernel>=6.0.0,<8.0.0
+
+# ── Report generation ─────────────────────────────────────────────────────────
+# python-docx: used by report/build_docx.py to generate the Word document report
+# (Subham_Customer_Churn_Project_Report.docx), including formatting styles,
+# tables, cell shading, and embedded figure insertion.
+python-docx>=1.1.0,<2.0.0
+
